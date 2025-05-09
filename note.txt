@@ -1,0 +1,10 @@
+git init
+git remote add origin https://github.com/your-username/your-repo.git
+git add .
+git commit -m "update bot mới nhất"
+git push -u origin main  # hoặc 'master' tùy nhánh
+
+
+git add .
+git commit -m "update bài học"
+git push
