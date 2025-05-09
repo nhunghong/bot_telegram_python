@@ -182,19 +182,29 @@ async def show_lesson_detail(query, code):
 
 async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    try:
-        await query.answer()
-    except Exception as e:
-        print("⚠️ Bỏ qua lỗi query cũ:", e)
-
+    await query.answer()
     data = query.data
+
     if data == "menu":
-        return await hoc(update, context)
+        # Gọi lại menu nhưng dùng edit_message_text vì đang ở callback
+        await hoc_callback(query)
     elif data in stages:
         return await show_stage_lessons(query, data)
     elif data in lessons:
         return await show_lesson_detail(query, data)
 
+async def hoc_callback(query):
+    keyboard = [
+        [InlineKeyboardButton("🐍 Giai đoạn 1: Làm quen Python", callback_data="gd1")],
+        [InlineKeyboardButton("⚙️ Giai đoạn 2: Thực hành thực tế", callback_data="gd2")],
+        [InlineKeyboardButton("🤖 Giai đoạn 3: Automation Test", callback_data="gd3")],
+        [InlineKeyboardButton("🚀 Giai đoạn 4: Nâng cao", callback_data="gd4")],
+    ]
+    await query.edit_message_text(
+        "*Chọn giai đoạn học:*",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        parse_mode="Markdown"
+    )
 
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
