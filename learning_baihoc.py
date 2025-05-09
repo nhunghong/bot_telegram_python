@@ -120,12 +120,20 @@ lessons = {
 
 async def hoc(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("🐍 " + stages["gd1"], callback_data="gd1")],
-        [InlineKeyboardButton("⚙️ " + stages["gd2"], callback_data="gd2")],
-        [InlineKeyboardButton("🤖 " + stages["gd3"], callback_data="gd3")],
-        [InlineKeyboardButton("🚀 " + stages["gd4"], callback_data="gd4")],
+        [InlineKeyboardButton("🐍 Giai đoạn 1: Làm quen Python", callback_data="gd1")],
+        [InlineKeyboardButton("⚙️ Giai đoạn 2: Thực hành thực tế", callback_data="gd2")],
+        [InlineKeyboardButton("🤖 Giai đoạn 3: Automation Test", callback_data="gd3")],
+        [InlineKeyboardButton("🚀 Giai đoạn 4: Nâng cao", callback_data="gd4")],
     ]
-    await update.message.reply_text("*Chọn giai đoạn học:*", reply_markup=InlineKeyboardMarkup(keyboard), parse_mode="Markdown")
+    
+    text = "*Chọn giai đoạn học:*"
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    if update.message:
+        await update.message.reply_text(text, reply_markup=reply_markup, parse_mode="Markdown")
+    elif update.callback_query:
+        await update.callback_query.edit_message_text(text, reply_markup=reply_markup, parse_mode="Markdown")
+
 
 async def show_stage_lessons(query, stage):
     lessons_keyboard = []
