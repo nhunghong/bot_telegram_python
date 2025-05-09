@@ -1,1 +1,1 @@
-web: python learning_baihoc.py
+python learning_baihoc.py
