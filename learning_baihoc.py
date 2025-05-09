@@ -2,8 +2,12 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, BotComm
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 import nest_asyncio
 nest_asyncio.apply()
+import os
+from dotenv import load_dotenv
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-BOT_TOKEN = "7442682123:AAEC5a-kK2dls3UKlC8Ya3ASO6b-pb820tc"
+#BOT_TOKEN = "7442682123:AAEC5a-kK2dls3UKlC8Ya3ASO6b-pb820tc"
 
 stages = {
     "gd1": "Giai đoạn 1: Làm quen Python",
