@@ -174,14 +174,19 @@ async def show_lesson_detail(query, code):
 
 async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    await query.answer()
+    try:
+        await query.answer()
+    except Exception as e:
+        print("⚠️ Bỏ qua lỗi query cũ:", e)
+
     data = query.data
     if data == "menu":
-        return await hoc(query, context)
+        return await hoc(update, context)
     elif data in stages:
         return await show_stage_lessons(query, data)
     elif data in lessons:
         return await show_lesson_detail(query, data)
+
 
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
