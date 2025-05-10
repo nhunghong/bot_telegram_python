@@ -1,5 +1,6 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, BotCommand
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
+from telegram.ext import MessageHandler, filters
 import nest_asyncio
 nest_asyncio.apply()
 import os
@@ -473,13 +474,24 @@ async def hoc_callback(query):
         parse_mode="Markdown"
     )
 
+async def block_spam(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = update.message.text or ""
+    if "t.me" in text or "@JetonVPNNbot" in text or "VPN" in text:
+        await update.message.delete()
+        return
+
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
+
     await app.bot.set_my_commands([BotCommand("hoc", "Xem danh sách bài học")])
+
     app.add_handler(CommandHandler("hoc", hoc))
     app.add_handler(CallbackQueryHandler(handle_callback))
+    app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), block_spam))  # ✅ dòng cần thêm
+
     print("✅ Bot bài học Python đã khởi động.")
     await app.run_polling()
+
 
 if __name__ == "__main__":
     import asyncio
