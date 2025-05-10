@@ -442,7 +442,7 @@ async def show_lesson_detail(query, code):
     buttons.append(InlineKeyboardButton("🔙 Quay lại", callback_data=stage))
 
     await query.edit_message_text(
-        f"*{lesson['title']}\n\n{lesson['content']}",
+        f"*{lesson['title']}*\n\n{lesson['content']}",
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup([buttons])
     )
@@ -476,9 +476,11 @@ async def hoc_callback(query):
 
 async def block_spam(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text or ""
-    if "t.me" in text or "@JetonVPNNbot" in text or "VPN" in text:
-        await update.message.delete()
-        return
+    if "t.me" in text or "VPN" in text or "@JetonVPNNbot" in text:
+        try:
+            await update.message.delete()
+        except Exception as e:
+            print(f"❌ Không thể xóa: {e}")
 
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
