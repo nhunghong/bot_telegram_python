@@ -442,7 +442,7 @@ async def show_lesson_detail(query, code):
     buttons.append(InlineKeyboardButton("🔙 Quay lại", callback_data=stage))
 
     await query.edit_message_text(
-        f"*{lesson['title']}*\n\n{lesson['content']}",
+        f"*{lesson['title']}\n\n{lesson['content']}",
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup([buttons])
     )
