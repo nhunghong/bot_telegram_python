@@ -14,12 +14,11 @@ exercises = {
     "g1_b2": """
         📌 *Bài tập Bài 2: Cài đặt Python & VSCode*
 
-        1. Cài Python bản mới nhất tại [python.org](https://python.org)
+        1. Cài Python bản mới nhất 
         2. Mở VSCode, tạo file `hello.py` và in ra:
         ```python
         print("Xin chào từ VSCode")
         ```
-        3. Gửi ảnh chụp màn hình VSCode bạn đã chạy thành công file Python.
         4. Cài đặt các extension cần thiết cho Python trong VSCode.
         """,
 
@@ -31,10 +30,7 @@ exercises = {
         3. Biến `is_tester = True`, kiểm tra nếu là tester thì in: `Chào mừng tester!`
         4. Viết câu lệnh kiểm tra xem `tuoi` có lớn hơn 18 không?
         5. Viết câu lệnh kiểm tra xem `chieu_cao` có lớn hơn 1.7 không?
-        6. Viết câu lệnh kiểm tra xem `ho_ten` có chứa chữ `Nguyen` không?
-        7. Viết câu lệnh kiểm tra xem `ho_ten` có chứa chữ `Nguyen` và `tuoi` lớn hơn 18 không?
-        8. Viết câu lệnh kiểm tra xem `ho_ten` có chứa chữ `Nguyen` hoặc `tuoi` lớn hơn 18 không?
-        9. Viết câu lệnh kiểm tra xem `ho_ten` có chứa chữ `Nguyen` và không phải là tester không?""",
+        6. Viết câu lệnh kiểm tra xem `ho_ten` có chứa chữ `Nguyen` không?""",
 
     "g1_b4": """
         📌 *Bài tập Bài 4: Toán tửa + logic*
@@ -43,8 +39,6 @@ exercises = {
         2. Kiểm tra xem `a` có lớn hơn `b` không?
         3. Viết câu lệnh: nếu `tuoi > 18` và `is_tester == True` thì in `OK`
         4. Viết câu lệnh: nếu `tuoi < 18` hoặc `is_tester == False` thì in `Chưa đủ điều kiện`
-        5. Viết câu lệnh: nếu `tuoi == 18` và không phải là tester thì in `Chúc mừng!`
-        6. Viết câu lệnh: nếu `tuoi != 18` hoặc là tester thì in `Chúc bạn thành công!`
         """,
 
     "g1_b5": """
@@ -64,7 +58,6 @@ exercises = {
         2. In các số từ 5 đến 1 bằng `while`
         3. Duyệt danh sách `['A', 'B', 'C']` và in từng phần tử
         4. Tính tổng các số từ 1 đến 100 bằng vòng lặp `for`
-        5. Tính tổng các số từ 1 đến 100 bằng vòng lặp `while`
         """,
 
     "g1_b7": """

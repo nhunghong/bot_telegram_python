@@ -6,6 +6,7 @@ from lessons.stage2 import stage2_lessons
 from lessons.stage3 import stage3_lessons
 from lessons.stage4 import stage4_lessons
 from lessons.exercises import exercises
+from lessons.setup_library import lesson as setup_library
 import nest_asyncio
 nest_asyncio.apply()
 import os
@@ -19,14 +20,16 @@ stages = {
     "gd1": "Giai đoạn 1: Làm quen Python",
     "gd2": "Giai đoạn 2: Thực hành thực tế",
     "gd3": "Giai đoạn 3: Automation Test",
-    "gd4": "Giai đoạn 4: Nâng cao"
+    "gd4": "Giai đoạn 4: Nâng cao",
+    "gd5": "Bài học bổ sung: Cài đặt thư viện Python"
 }
 
 lessons = {
     **stage1_lessons,
     **stage2_lessons,
     **stage3_lessons,
-    **stage4_lessons 
+    **stage4_lessons,
+    **setup_library,
 }
 
 # Gán bài tập từ exercises vào lessons nếu có
@@ -40,6 +43,7 @@ async def hoc(update: Update, context: ContextTypes.DEFAULT_TYPE):
         [InlineKeyboardButton("⚙️ Giai đoạn 2: Thực hành thực tế", callback_data="gd2")],
         [InlineKeyboardButton("🤖 Giai đoạn 3: Automation Test", callback_data="gd3")],
         [InlineKeyboardButton("🚀 Giai đoạn 4: Nâng cao", callback_data="gd4")],
+        [InlineKeyboardButton("⚙️ Bài học bổ sung: Cài đặt thư viện Python", callback_data="gd5")],
     ]
     
     text = "*Chọn giai đoạn học:*"
@@ -98,8 +102,6 @@ async def show_lesson_detail(query, code):
         reply_markup=InlineKeyboardMarkup([buttons])
     )
 
-
-
 async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
@@ -119,6 +121,7 @@ async def hoc_callback(query):
         [InlineKeyboardButton("⚙️ Giai đoạn 2: Thực hành thực tế", callback_data="gd2")],
         [InlineKeyboardButton("🤖 Giai đoạn 3: Automation Test", callback_data="gd3")],
         [InlineKeyboardButton("🚀 Giai đoạn 4: Nâng cao", callback_data="gd4")],
+        [InlineKeyboardButton("⚙️ Bài học bổ sung: Cài đặt thư viện Python", callback_data="gd5")],
     ]
     await query.edit_message_text(
         "*Chọn giai đoạn học:*",
