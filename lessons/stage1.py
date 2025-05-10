@@ -23,12 +23,6 @@ stage1_lessons = {
             "- Hiểu Python dùng để làm gì\n"
             "- Lý do nên chọn Python cho automation\n"
             "- Chuẩn bị cài đặt Python ở bài tiếp theo"
-        ),
-        "exercise": (
-            "*📚 Bài tập Bài 1:*\n"
-            "1. Viết lệnh in ra dòng chữ: `Hello Tester`\n"
-            "2. Viết 3 dòng lệnh in ra tên, tuổi và nghề nghiệp của bạn.\n\n"
-            "*Gợi ý: dùng lệnh `print()`*"
         )
     },
     "g1_b2": {

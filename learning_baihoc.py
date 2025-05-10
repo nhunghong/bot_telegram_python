@@ -29,6 +29,11 @@ lessons = {
     **stage4_lessons 
 }
 
+# Gán bài tập từ exercises vào lessons nếu có
+for code in exercises:
+    if code in lessons:
+        lessons[code]["exercise"] = exercises[code]
+
 async def hoc(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("🐍 Giai đoạn 1: Làm quen Python", callback_data="gd1")],
