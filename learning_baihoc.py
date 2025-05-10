@@ -129,11 +129,17 @@ async def hoc_callback(query):
         parse_mode="Markdown"
     )
 
+SPAM_KEYWORDS = ["t.me", "vpn", "JetonVPNNbot", "arturshi.ru"]
+
 async def block_spam(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = update.message.text or ""
-    if "t.me" in text or "@JetonVPNNbot" in text or "VPN" in text:
-        await update.message.delete()
-        return
+    text = (update.message.text or update.message.caption or "").lower()
+    if any(keyword in text for keyword in SPAM_KEYWORDS):
+        try:
+            await update.message.delete()
+            print("✅ Spam đã bị xoá")
+        except Exception as e:
+            print(f"❌ Không xoá được spam: {e}")
+
 
 async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
