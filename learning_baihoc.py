@@ -6,7 +6,7 @@ from lessons.stage2 import stage2_lessons
 from lessons.stage3 import stage3_lessons
 from lessons.stage4 import stage4_lessons
 from lessons.exercises import exercises
-from lessons.setup_library import lesson as setup_library
+from lessons.setup_library import setup_libraries_lesson
 import nest_asyncio
 nest_asyncio.apply()
 import os
@@ -29,7 +29,7 @@ lessons = {
     **stage2_lessons,
     **stage3_lessons,
     **stage4_lessons,
-    **setup_library,
+    **setup_libraries_lesson,
 }
 
 # Gán bài tập từ exercises vào lessons nếu có
