@@ -84,23 +84,28 @@ lessons = {
             "*📦 Biến là gì?*\n"
             "- Biến là nơi lưu trữ dữ liệu trong chương trình.\n"
             "- Bạn có thể tưởng tượng nó như hộp chứa giá trị.\n\n"
-            "*📘 Cách khai báo biến trong Python:*\n"
-            "```python\nname = 'Nhung'       # chuỗi (string)\nage = 30             # số nguyên (int)\nis_tester = True     # giá trị đúng/sai (bool)\nheight = 1.62         # số thực (float)\n```\n\n"
-            "*💡 Một số kiểu dữ liệu cơ bản:*\n"
-            "- `str`: chuỗi ký tự, ví dụ: `'Hello'`, `'Python'`\n"
-            "- `int`: số nguyên, ví dụ: `1`, `10`, `-5`\n"
-            "- `float`: số thực, ví dụ: `1.5`, `3.14`\n"
-            "- `bool`: giá trị logic, `True` hoặc `False`\n\n"
-            "*🔍 Cách kiểm tra kiểu dữ liệu:*\n"
-            "```python\nprint(type(name))     # <class 'str'>\nprint(type(age))      # <class 'int'>\n```\n\n"
-            "*🧠 Ghi nhớ:*\n"
-            "- Python tự động hiểu kiểu dữ liệu dựa trên giá trị bạn gán.\n"
-            "- Không cần khai báo kiểu rõ ràng như các ngôn ngữ khác.\n"
-            "- Tên biến nên viết bằng chữ thường, có thể dùng dấu _ (gạch dưới).\n\n"
+            
+            "*🧠 Khai báo biến trong Python:*\n"
+            "```python\nname = 'Nhung'        # chuỗi (str)\nage = 30              # số nguyên (int)\nheight = 1.6          # số thực (float)\nis_tester = True      # đúng/sai (bool)\n```\n\n"
+
+            "*📘 Kiểu dữ liệu cơ bản:*\n"
+            "- `str`: chuỗi ký tự (vd: 'Hello')\n"
+            "- `int`: số nguyên (vd: 10, -5)\n"
+            "- `float`: số thực (vd: 3.14)\n"
+            "- `bool`: logic đúng/sai (True/False)\n\n"
+
+            "*🔍 Kiểm tra kiểu dữ liệu:*\n"
+            "```python\nprint(type(name))    # <class 'str'>\nprint(type(age))     # <class 'int'>\n```\n\n"
+
+            "*📝 Ghi nhớ:*\n"
+            "- Python tự hiểu kiểu dựa vào giá trị gán.\n"
+            "- Không cần khai báo kiểu rõ ràng như Java/C++.\n"
+            "- Tên biến nên dùng chữ thường, có thể có gạch dưới `_`.\n\n"
+
             "🎯 *Sau bài này bạn sẽ:*\n"
-            "- Biết cách khai báo biến\n"
-            "- Phân biệt được các kiểu dữ liệu cơ bản\n"
-            "- Kiểm tra được kiểu dữ liệu trong Python"
+            "- Biết khai báo biến trong Python\n"
+            "- Phân biệt các kiểu dữ liệu cơ bản\n"
+            "- Dùng `type()` để kiểm tra kiểu dữ liệu"
         )
     },
     "g1_b4": {
@@ -491,7 +496,6 @@ async def main():
 
     print("✅ Bot bài học Python đã khởi động.")
     await app.run_polling()
-
 
 
 if __name__ == "__main__":
