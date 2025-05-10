@@ -1,5 +1,5 @@
 setup_libraries_lesson = {
-    "g1_b1": {
+    "g5_b1": {
         "title": "Bài học bổ sung: Cài đặt thư viện Python",
         "content": (
             "*🧩 Cài đặt thư viện là gì?*\n"
